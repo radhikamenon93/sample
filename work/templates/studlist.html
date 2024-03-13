@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            background-color: aquamarine;
+            margin: auto;
+            margin-top: 8%;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">BOOK DETAILS</h1>
+    <table border="2px">
+     <tr>
+        <th>name</th>
+        <th>course</th>
+        <th>age</th>
+     </tr>
+    
+     {%for book in qs%}
+      <tr>
+        <td>{{book.name}} </td>
+        <td>{{book.course}}</td>
+        <td>{{book.age}}</td>
+        <td>
+            <a href="{% url 'stud-det' book.id %}">link</a>
+        </td>
+        <td>
+            <a href="{% url 'stud-b' book.id %}">link</a>
+        </td>
+        <td>
+            <a href="{% url 'stud-c' book.id %}">update</a>
+        </td>
+       
+       
+      </tr>
+    
+    
+    
+     {%endfor%}
+    </table>
+</body>
+</html>
